@@ -80,11 +80,10 @@ ul {
 a {
   text-decoration: none;
 }
-img:not(.logo) {
-  width: 100%;
-}
+
+
 img {
-  display: block;
+  display:block;
 }
 
 h1,
@@ -171,7 +170,16 @@ main {
 Menu
 ===============
 */
-
+.topBar{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.topBarFlex{
+  justify-content: space-between;
+  margin: 60px;
+  margin-bottom: 30px;
+}
 .menu {
   padding: 5rem 0;
 }
