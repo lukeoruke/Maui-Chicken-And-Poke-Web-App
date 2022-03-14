@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "maui chicken and poke web app",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "test"
   },
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/blerry/Maui-Chicken-And-Poke-Web-App#readme",
   "dependencies": {
     "firebase": "^9.6.8"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
   }
 }
