@@ -1,3 +1,5 @@
+import { initializeApp } from 'firebase/app';
+
 const menu = [
   {
     id: 1,

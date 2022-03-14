@@ -1,0 +1,25 @@
+{
+  "name": "maui",
+  "version": "1.0.0",
+  "description": "maui chicken and poke web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blerry/Maui-Chicken-And-Poke-Web-App.git"
+  },
+  "keywords": [
+    "chicken"
+  ],
+  "author": "Tad Berry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blerry/Maui-Chicken-And-Poke-Web-App/issues"
+  },
+  "homepage": "https://github.com/blerry/Maui-Chicken-And-Poke-Web-App#readme",
+  "dependencies": {
+    "firebase": "^9.6.8"
+  }
+}
