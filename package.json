@@ -2,7 +2,7 @@
   "name": "maui",
   "version": "1.0.0",
   "description": "maui chicken and poke web app",
-  "main": "app.js",
+  "main": "public/app.js",
   "type": "module",
   "scripts": {
     "test": "test"

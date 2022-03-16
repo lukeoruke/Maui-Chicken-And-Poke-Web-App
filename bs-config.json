@@ -1,0 +1,8 @@
+{
+    "injectChanges": false,
+    "files": [ "./**/*.{html,htm,css,js}" ],
+    "watchOptions": { "ignored":"2-naive.txt" },
+    "server": {
+      "baseDir": "./"
+    }
+  }

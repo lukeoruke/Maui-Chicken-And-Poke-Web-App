@@ -1,17 +1,20 @@
+
+//import { initializeApp } from 'https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js';
+//const app = initializeApp(firebaseConfig);
 const menu = [
   {
     id: 1,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 15.99,
+    title: "Teriyaki Chicken",
+    category: "lunch",
+    price: 7.99,
     img: "./images/item-1.jpeg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
     id: 2,
-    title: "diner double",
+    title: "Garlic Shrimp",
     category: "lunch",
-    price: 13.99,
+    price: 10.99,
     img: "./images/item-2.jpeg",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
@@ -71,12 +74,26 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "bison steak",
+    category: "dinner",
+    price: 22.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
-
+// get parent element
 const sectionCenter = document.querySelector(".section-center");
-
+const btnContainer = document.querySelector(".btn-container");
+// display all items when page loads
 window.addEventListener("DOMContentLoaded", function () {
-  let displayMenu = menu.map(function (item) {
+  diplayMenuItems(menu);
+  displayMenuButtons();
+});
+
+function diplayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
     // console.log(item);
 
     return `<article class="menu-item">
@@ -93,7 +110,47 @@ window.addEventListener("DOMContentLoaded", function () {
         </article>`;
   });
   displayMenu = displayMenu.join("");
-  console.log(displayMenu);
+  // console.log(displayMenu);
 
   sectionCenter.innerHTML = displayMenu;
-});
+}
+function displayMenuButtons() {
+  const categories = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all","other"]
+  );
+  const categoryBtns = categories
+    .map(function (category) {
+      return `<button type="button" class="filter-btn" data-id=${category}>
+          ${category}
+        </button>`;
+    })
+    .join("");
+
+  btnContainer.innerHTML = categoryBtns;
+  const filterBtns = btnContainer.querySelectorAll(".filter-btn");
+  console.log(filterBtns);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      // console.log(e.currentTarget.dataset);
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function (menuItem) {
+        // console.log(menuItem.category);
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      if (category === "all") {
+        diplayMenuItems(menu);
+      } else {
+        diplayMenuItems(menuCategory);
+      }
+    });
+  });
+}
