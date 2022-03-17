@@ -1,5 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
+
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
 

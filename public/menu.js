@@ -1,6 +1,25 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 
-//import { initializeApp } from 'https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js';
-//const app = initializeApp(firebaseConfig);
+const firebaseConfig = {
+  apiKey: "AIzaSyC095wM6mpg04Sm8I_whR8h-3QXSe22-b4",
+
+  authDomain: "maui-chicken-and-poke.firebaseapp.com",
+
+  projectId: "maui-chicken-and-poke",
+
+  storageBucket: "maui-chicken-and-poke.appspot.com",
+
+  messagingSenderId: "97093814083",
+
+  appId: "1:97093814083:web:465d9be7fd04c4b7fed1f6",
+
+  measurementId: "G-81FFTX4SBY"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
 const menu = [
   {
     id: 1,
